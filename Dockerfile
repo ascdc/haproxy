@@ -9,6 +9,6 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 	apt-get -y install apt-get install software-properties-common && \
 	add-apt-repository ppa:vbernat/haproxy-1.6 && \
 	apt-get -y upgrade && \
-	apt-get -y install haproxy vim 
+	apt-get -y install haproxy
 
 ENTRYPOINT ["/run.sh"]
