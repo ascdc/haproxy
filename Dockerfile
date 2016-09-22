@@ -9,6 +9,6 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 	apt-get -y install software-properties-common && \
 	add-apt-repository ppa:vbernat/haproxy-1.6 && \
 	apt-get -y upgrade && \
-	apt-get -y install haproxy sed
-	echo "ENABLED=1" > /etc/default/haproxy
+	apt-get -y install haproxy && \
+	sed -i "s/ENABLED=0/ENABLED=1/g" /etc/default/haproxy
 ENTRYPOINT ["/run.sh"]
